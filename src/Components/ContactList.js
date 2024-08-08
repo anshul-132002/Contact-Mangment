@@ -3,10 +3,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 function ContactList(props) {
   const { contact, removeContact } = props;
   console.log(contact);
-  const contactList = contact.map((val) => {
+  const contactList = contact.map((val,id) => {
     return (
-      <div className="contact-item">
-        <div>{val.data.name}</div>
+      <div className="contact-item" key={id}>
+        <div >{val.data.name}</div>
         <div>{val.data.email}</div>
         <span onClick={() => removeContact(val.id)}>
           <DeleteIcon />
